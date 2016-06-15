@@ -1,15 +1,12 @@
 class ContactListController {
-    constructor() {
-        this.contacts = [
-            'ryan Howell',
-            'donna Murray',
-            'jack Fernandez',
-            'Nicholas Ward',
-            'Samuel Morris'
-        ];
+    constructor(AddContactsService) {
+     
+    AddContactsService.fetchContacts().then(response=>{this.contacts=response.data;});
+        
     }
 }
 
 export default [
+    'AddContactsService',    
     ContactListController
 ];

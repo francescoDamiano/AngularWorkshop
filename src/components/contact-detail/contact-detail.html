@@ -22,17 +22,18 @@
                 <span >Last name required</span>
             </div>
         </p>
-
         <p>
             <label for="">Email</label><br/>
             <input type="email" name='email' ng-model="contactDetailController.contact.email" required>
             <div ng-show="contactForm.email.$error.required || contactForm.email.$error.touched">
                 <span >Email required</span>
+                <robot-email email="contactDetailController.contact.email"></robot-email>
             </div>
+             
         </p>
 
         <p>
-            <input type="submit" value="Save" ng-disabled="contactForm.$invalid">
+            <input type="submit" value="Save" ng-disabled="contactForm.$invalid" ng-click="contactDetailController.saveUpdate()">
         </p>
     </form>
 </div>
