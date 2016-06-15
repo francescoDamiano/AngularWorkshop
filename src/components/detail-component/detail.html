@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<form name="myform" novalidate>
+    <p>
+    <input type="text" name="fieldName" ng-model="user.name" ng-value="dctrl.name" placeholder="Insert your name" required>   
+    <input type="email" name="fieldEmail" ng-model="user.email" placeholder="Insert your email">
+    <input type="text" ng-model="user.phone" placeholder="Insert your mobile number">
+    </p>
+    
+
+        <span ng-show="myform.fieldName.$touched && myform.fieldName.$error.required">Please insert your name</span>  
+          <span ng-show="myform.fieldEmail.$touched && myform.fieldEmail.$error.email">Please insert a correct email</span>  
+   
+    
+    <input type="submit" ng-disabled="myform.$invalid">
+    
+</form>

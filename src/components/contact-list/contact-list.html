@@ -1,0 +1,16 @@
+<h1> Contact List</h1>
+
+<style type="text/css">
+    .expand
+    {
+        background-color: black;
+    }
+    </style>
+
+
+<input type="text" ng-model="input">
+
+<ul ng-repeat="contact in ctrl.contacts|filter:input">
+    <li><a ui-sref="app.detail({name:contact})">{{contact|myfilter}}</a></li>
+</ul>
+
